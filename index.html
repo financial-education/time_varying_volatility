@@ -47,25 +47,102 @@
 
 
 	<section>
-	  <h3></h3>
-	  <p align="left"></p>
+	  *For an introduction to risk in financial markets see [A First Look at Risk](https://micfm.shinyapps.io/what_is_risk).*
+	</section>
+	
+<section data-markdown>
+	  <textarea data-template>
 
+	## Measuring Risk
+
+The main problem with risk calculations is that it requires us to predict the future.  
+
+- During stable periods, the past may be a good predictor of the future, so we can use historical data.
+
+- In periods of crisis, however, the future may behave differently from the past rendering historical data irrelevant.
+
+- It is precisely in the latter type of period that we need good measures of risk. In other words, *risk measures tend to work well until you need them.*
+	  </textarea>
 	</section>
 
-	<section>
-	  <h3></h3>
 
-	</section>
+<section data-markdown>
+	  <textarea data-template>
+
+## Review of Return Description
+
+To implement any measure of risk we must have a description of how the asset's returns behave.  
+
+- This is described by a probability density function (PDF).  
+
+- For all intervals, the PDF assigns a probability that an asset's return will be within each interval in a given period. <span class="fragment highlight-green">For example, the PDF may say there is a 7% probability the asset's return will be between 1% and 2% over the next day.</span>
+	  </textarea>
+</section>
 
 
-<!-- Insert App -->
-<!-- <section data-background-image="./code_image.jpg"> -->
-<!--   <div class="stretch"> -->
-<!--     <iframe src="https://micfm.shinyapps.io/limit_order_book_app1/" height="100%" width="100%"></iframe> -->
-<!--   </div> -->
-<!-- </section> -->
-<!-- </section> -->
 
+<section data-markdown>
+	  <textarea data-template>  
+## Let's Take a Look
+
+In the following app you can see how stock returns distributions behaved over different time periods. 
+
+-  Generally, the lower the peak of the distribution, the higher the risk (possible returns are spread over a wider interval of returns). 
+
+-  Be sure to move the 3D graphic around and zoom in and out to get a better look.
+	  </textarea>
+</section>
+
+<section data-markdown>
+	  <textarea data-template>
+- Try and compare small stocks with the distributions on portfolios of large numbers of stocks.  For example, take a look at EGAS and then SPY.  EGAS is a small Natural Gas distributor and SPY is an ETF which tracks the S&P 500.  Are there differences between how risk varies between the two?
+
+-  The app may take 5 seconds or so to load.  Hit backspace and start typing in a company's name.  The app will search for the company as you type.
+	  </textarea>
+</section>
+
+<section data-background-image="./code_image.jpg">
+  <div class="stretch">
+    <iframe src="https://micfm.shinyapps.io/risk_future_past_app1/" height="100%" width="100%"></iframe>
+  </div>
+</section>
+</section>
+
+<!-- go a bit into ARCH/GARCH models -->
+
+
+<section data-markdown>
+	  <textarea data-template>
+##  Predicting Risk: Models
+
+We do have various methods to predict risk, such as the [ARCH/GARCH](https://en.wikipedia.org/wiki/Autoregressive_conditional_heteroskedasticity) class of models and predictions from [Kalman Filtering](https://en.wikipedia.org/wiki/Kalman_filter) and [Markov Switching](http://complete-markets.com/2014/02/markov-regime-switching-volatility-in-natural-gas-futures-ngh4/) algorithms.
+	  </textarea>
+</section>
+
+<section data-markdown>
+	  <textarea data-template>
+- In these models, however, future risk is a function of past risk, and so in low-risk periods the models will predict low risk in the future, and for high-risk periods, they will predict high risk in the future.  This makes sense, because we know [volatility clusters](https://en.wikipedia.org/wiki/Volatility_clustering).  
+
+-  What these models won't tell us is when we'll *transition* from low to high risk periods.  This transition point is a very valuable piece of information.
+	  </textarea>
+</section>
+
+
+<section data-markdown>
+	  <textarea data-template>
+##  Predicting Risk: Expectations
+
+Given the weakness of the econometric method of predicting risk, most focus on market-based estimates.  Expected risk is an important component of option prices. <span class="fragment highlight-green">So we can observe option prices to get an idea of what market participants expect risk to be in the future.</span>
+	  </textarea>
+</section>
+
+<section data-markdown>
+	  <textarea data-template>
+-  This method works well when there are known events -- such as an option earnings season.  However, it will fail if the events are unforeseen, such as the BP Gulf of Mexico oil spill.
+
+-  A commonly cited measure of overall market risk is the [VIX](https://micfm.shinyapps.io/The_VIX/).  There is even an expected volatility of this VIX in the [VVIX](https://micfm.shinyapps.io/The_VVIX/).
+	  </textarea>
+</section>
 
 <section>
 <h3>Credits and Collaboration</h3>
